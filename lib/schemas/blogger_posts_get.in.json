@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "fetchBody": {
+            "type": "boolean",
+            "default": true
+        },
+        "fetchImages": {
+            "type": "boolean"
+        },
+        "maxComments": {
+            "type": "integer"
+        },
+        "postId": {
+            "required": true,
+            "type": "string"
+        },
+        "view": {
+            "type": "string",
+            "enum": [
+                "ADMIN",
+                "AUTHOR",
+                "READER"
+            ]
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,114 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "isDraft": {
+            "type": "boolean"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "author": {
+                    "description": "The author of this Page.",
+                    "properties": {
+                        "displayName": {
+                            "description": "The display name.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The identifier of the Page creator.",
+                            "type": "string"
+                        },
+                        "image": {
+                            "description": "The page author's avatar.",
+                            "properties": {
+                                "url": {
+                                    "description": "The page author's avatar URL.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "url": {
+                            "description": "The URL of the Page creator's Profile page.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "blog": {
+                    "description": "Data about the blog containing this Page.",
+                    "properties": {
+                        "id": {
+                            "description": "The identifier of the blog containing this page.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "content": {
+                    "description": "The body content of this Page, in HTML.",
+                    "type": "string"
+                },
+                "etag": {
+                    "description": "Etag of the resource.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "The identifier for this resource.",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "blogger#page",
+                    "description": "The kind of this entity. Always blogger#page",
+                    "type": "string"
+                },
+                "published": {
+                    "description": "RFC 3339 date-time when this Page was published.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "selfLink": {
+                    "description": "The API REST URL to fetch this resource from.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "The status of the page for admin resources (either LIVE or DRAFT).",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "The title of this entity. This is the name displayed in the Admin user interface.",
+                    "type": "string"
+                },
+                "updated": {
+                    "description": "RFC 3339 date-time when this Page was last updated.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "The URL that this Page is displayed at.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

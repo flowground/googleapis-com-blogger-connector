@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "commentId": {
+            "required": true,
+            "type": "string"
+        },
+        "postId": {
+            "required": true,
+            "type": "string"
+        },
+        "view": {
+            "type": "string",
+            "enum": [
+                "ADMIN",
+                "AUTHOR",
+                "READER"
+            ]
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

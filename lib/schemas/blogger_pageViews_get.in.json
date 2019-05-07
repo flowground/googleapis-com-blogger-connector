@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "range": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "30DAYS",
+                    "7DAYS",
+                    "all"
+                ],
+                "type": "string"
+            }
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

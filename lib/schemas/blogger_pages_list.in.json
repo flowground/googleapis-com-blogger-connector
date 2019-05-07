@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "fetchBodies": {
+            "type": "boolean"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "status": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "draft",
+                    "live"
+                ],
+                "type": "string"
+            }
+        },
+        "view": {
+            "type": "string",
+            "enum": [
+                "ADMIN",
+                "AUTHOR",
+                "READER"
+            ]
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

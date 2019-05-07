@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "endDate": {
+            "type": "string"
+        },
+        "fetchBodies": {
+            "type": "boolean"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "startDate": {
+            "type": "string"
+        },
+        "status": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "emptied",
+                    "live",
+                    "pending",
+                    "spam"
+                ],
+                "type": "string"
+            }
+        }
+    }
+}

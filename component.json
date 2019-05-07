@@ -1,0 +1,611 @@
+{
+    "title": "Blogger",
+    "description": "API for access to the data within Blogger.",
+    "docsUrl": "https://developers.google.com/blogger/docs/3.0/getting_started",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/blogger/v3/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/blogger/v3",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "blogger_blogs_getByUrl": {
+            "main": "./lib/actions/blogger_blogs_getByUrl.js",
+            "title": "Retrieve a Blog by URL.",
+            "description": "Retrieve a Blog by URL.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_blogs_getByUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_blogs_get": {
+            "main": "./lib/actions/blogger_blogs_get.js",
+            "title": "Gets one blog by ID.",
+            "description": "Gets one blog by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_blogs_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_comments_listByBlog": {
+            "main": "./lib/actions/blogger_comments_listByBlog.js",
+            "title": "Retrieves the comments for a blog, across all posts, possibly filtered.",
+            "description": "Retrieves the comments for a blog, across all posts, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_comments_listByBlog.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_list": {
+            "main": "./lib/actions/blogger_pages_list.js",
+            "title": "Retrieves the pages for a blog, optionally including non-LIVE statuses.",
+            "description": "Retrieves the pages for a blog, optionally including non-LIVE statuses.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_insert": {
+            "main": "./lib/actions/blogger_pages_insert.js",
+            "title": "Add a page.",
+            "description": "Add a page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_delete": {
+            "main": "./lib/actions/blogger_pages_delete.js",
+            "title": "Delete a page by ID.",
+            "description": "Delete a page by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_get": {
+            "main": "./lib/actions/blogger_pages_get.js",
+            "title": "Gets one blog page by ID.",
+            "description": "Gets one blog page by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_patch": {
+            "main": "./lib/actions/blogger_pages_patch.js",
+            "title": "Update a page. This method supports patch semantics.",
+            "description": "Update a page. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_update": {
+            "main": "./lib/actions/blogger_pages_update.js",
+            "title": "Update a page.",
+            "description": "Update a page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_publish": {
+            "main": "./lib/actions/blogger_pages_publish.js",
+            "title": "Publishes a draft page.",
+            "description": "Publishes a draft page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_publish.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pages_revert": {
+            "main": "./lib/actions/blogger_pages_revert.js",
+            "title": "Revert a published or scheduled page to draft state.",
+            "description": "Revert a published or scheduled page to draft state.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pages_revert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_pageViews_get": {
+            "main": "./lib/actions/blogger_pageViews_get.js",
+            "title": "Retrieve pageview stats for a Blog.",
+            "description": "Retrieve pageview stats for a Blog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_pageViews_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_list": {
+            "main": "./lib/actions/blogger_posts_list.js",
+            "title": "Retrieves a list of posts, possibly filtered.",
+            "description": "Retrieves a list of posts, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_insert": {
+            "main": "./lib/actions/blogger_posts_insert.js",
+            "title": "Add a post.",
+            "description": "Add a post.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_getByPath": {
+            "main": "./lib/actions/blogger_posts_getByPath.js",
+            "title": "Retrieve a Post by Path.",
+            "description": "Retrieve a Post by Path.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_getByPath.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_search": {
+            "main": "./lib/actions/blogger_posts_search.js",
+            "title": "Search for a post.",
+            "description": "Search for a post.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_delete": {
+            "main": "./lib/actions/blogger_posts_delete.js",
+            "title": "Delete a post by ID.",
+            "description": "Delete a post by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_get": {
+            "main": "./lib/actions/blogger_posts_get.js",
+            "title": "Get a post by ID.",
+            "description": "Get a post by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_patch": {
+            "main": "./lib/actions/blogger_posts_patch.js",
+            "title": "Update a post. This method supports patch semantics.",
+            "description": "Update a post. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_update": {
+            "main": "./lib/actions/blogger_posts_update.js",
+            "title": "Update a post.",
+            "description": "Update a post.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_comments_list": {
+            "main": "./lib/actions/blogger_comments_list.js",
+            "title": "Retrieves the comments for a post, possibly filtered.",
+            "description": "Retrieves the comments for a post, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_comments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_comments_delete": {
+            "main": "./lib/actions/blogger_comments_delete.js",
+            "title": "Delete a comment by ID.",
+            "description": "Delete a comment by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_comments_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_comments_get": {
+            "main": "./lib/actions/blogger_comments_get.js",
+            "title": "Gets one comment by ID.",
+            "description": "Gets one comment by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_comments_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_comments_approve": {
+            "main": "./lib/actions/blogger_comments_approve.js",
+            "title": "Marks a comment as not spam.",
+            "description": "Marks a comment as not spam.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_comments_approve.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_comments_removeContent": {
+            "main": "./lib/actions/blogger_comments_removeContent.js",
+            "title": "Removes the content of a comment.",
+            "description": "Removes the content of a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_comments_removeContent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_comments_markAsSpam": {
+            "main": "./lib/actions/blogger_comments_markAsSpam.js",
+            "title": "Marks a comment as spam.",
+            "description": "Marks a comment as spam.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_comments_markAsSpam.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_publish": {
+            "main": "./lib/actions/blogger_posts_publish.js",
+            "title": "Publishes a draft post, optionally at the specific time of the given publishDate parameter.",
+            "description": "Publishes a draft post, optionally at the specific time of the given publishDate parameter.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_publish.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_posts_revert": {
+            "main": "./lib/actions/blogger_posts_revert.js",
+            "title": "Revert a published or scheduled post to draft state.",
+            "description": "Revert a published or scheduled post to draft state.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_posts_revert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_users_get": {
+            "main": "./lib/actions/blogger_users_get.js",
+            "title": "Gets one user by ID.",
+            "description": "Gets one user by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_users_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_blogs_listByUser": {
+            "main": "./lib/actions/blogger_blogs_listByUser.js",
+            "title": "Retrieves a list of blogs, possibly filtered.",
+            "description": "Retrieves a list of blogs, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_blogs_listByUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_blogUserInfos_get": {
+            "main": "./lib/actions/blogger_blogUserInfos_get.js",
+            "title": "Gets one blog and user info pair by blogId and userId.",
+            "description": "Gets one blog and user info pair by blogId and userId.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_blogUserInfos_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_postUserInfos_list": {
+            "main": "./lib/actions/blogger_postUserInfos_list.js",
+            "title": "Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.",
+            "description": "Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_postUserInfos_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "blogger_postUserInfos_get": {
+            "main": "./lib/actions/blogger_postUserInfos_get.js",
+            "title": "Gets one post and user info pair, by post ID and user ID. The post user info contains per-user information about the post, such as access rights, specific to the user.",
+            "description": "Gets one post and user info pair, by post ID and user ID. The post user info contains per-user information about the post, such as access rights, specific to the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/blogger_postUserInfos_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

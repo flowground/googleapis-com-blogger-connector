@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "fetchBodies": {
+            "type": "boolean",
+            "default": true
+        },
+        "orderBy": {
+            "type": "string",
+            "enum": [
+                "published",
+                "updated"
+            ],
+            "default": "published"
+        },
+        "q": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "properties": {
+        "blogId": {
+            "required": true,
+            "type": "string"
+        },
+        "endDate": {
+            "type": "string"
+        },
+        "fetchBodies": {
+            "type": "boolean",
+            "default": false
+        },
+        "labels": {
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "orderBy": {
+            "type": "string",
+            "enum": [
+                "published",
+                "updated"
+            ],
+            "default": "published"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "startDate": {
+            "type": "string"
+        },
+        "status": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "draft",
+                    "live",
+                    "scheduled"
+                ],
+                "type": "string"
+            }
+        },
+        "userId": {
+            "required": true,
+            "type": "string"
+        },
+        "view": {
+            "type": "string",
+            "enum": [
+                "ADMIN",
+                "AUTHOR",
+                "READER"
+            ]
+        }
+    }
+}

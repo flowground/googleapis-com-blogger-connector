@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "fetchUserInfo": {
+            "type": "boolean"
+        },
+        "role": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "ADMIN",
+                    "AUTHOR",
+                    "READER"
+                ],
+                "type": "string"
+            }
+        },
+        "status": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "DELETED",
+                    "LIVE"
+                ],
+                "type": "string"
+            }
+        },
+        "userId": {
+            "required": true,
+            "type": "string"
+        },
+        "view": {
+            "type": "string",
+            "enum": [
+                "ADMIN",
+                "AUTHOR",
+                "READER"
+            ]
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}
